@@ -7,7 +7,8 @@
   --main-color: #ffffff;
   --background-color: #2f303a;
   --border-color: #ECECEC;
-
+  --background-color-btn:#f5f4fa;
+  --portfolio-border-color:#EEE;
   --indent: 30px;
   --items: 4;
 }
@@ -27,9 +28,9 @@ body {
 .link {
   text-decoration: none;
 }
-.link-current {
+/* .link-current {
   color: var(--accent-color);
-}
+} */
 
 /* reset starts */
 h1,
@@ -41,7 +42,7 @@ h6,
 p {
   margin: 0;
 }
-ul {
+.list {
   list-style: none;
   margin: 0;
   padding: 0;
@@ -135,7 +136,8 @@ img {
 .nav-link:hover,
 .nav-link:focus,
 .footer-link:hover,
-.footer-link:focus {
+.footer-link:focus,
+.link-current {
   color: var(--accent-color);
 }
 
@@ -186,7 +188,7 @@ img {
 
 
 /* Benefits */
-.benefits-list {
+.benefits .list {
   display: flex;
   flex-direction: row;
   gap: 30px;
@@ -269,11 +271,12 @@ gap: 30px;
 
 /* Footer */
 .footer {
-  padding-top: 60px 0;
+  padding: 60px 0;
   background-color: var(--background-color);
 }
 .footer .container {
   display: flex;
+  column-gap: 70px;
   align-items: baseline;
 }
 .logo-footer,
@@ -290,23 +293,63 @@ gap: 30px;
   color: rgba(255, 255, 255, 0.6);
   font-style: normal;
   font-weight: 400;
-  line-height: 24px;
+  line-height: calc(24/14);
   letter-spacing: 0.42px;
   text-decoration: none;
 }
-
+.address li:nth-child(-n + 2) {
+  margin-bottom: 9px;
+}
 
 /* ----SECOND PAGE---- */
 .portfolio-btn {
   font-family: inherit;
   font-weight: 500;
   font-size: 16px;
-  line-height: calc(26 / 16);
+  line-height: 26px;
   text-align: center;
   letter-spacing: 0.48px;
   cursor: pointer;
   border-style: none;
-  background: #f5f4fa;
+  background: var(--background-color-btn);
+  border-radius: 4px;
+  padding: 6px 22px;
+}
+.portfolio-list-btn {
+    margin-bottom: 50px;
+      display: flex;
+      justify-content: center;
+      column-gap: 8px;
+
+}
+.portfolio-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+.description {
+  padding: 20px 24px;
+  border-right: var(--portfolio-border-color) 1px solid;
+  border-left: var(--portfolio-border-color) 1px solid;
+  border-bottom: var(--portfolio-border-color) 1px solid;
+}
+
+.subtitle {
+  color: var(--main-title-color);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: calc(36/18);
+    letter-spacing: 1.08px;
+}
+
+.project {
+  color:var(--typography-color);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: calc(30/16);
+    letter-spacing: 0.48px;
 }
 /* .btn-list {
 
