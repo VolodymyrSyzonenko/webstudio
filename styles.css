@@ -10,6 +10,10 @@
   --portfolio-border-color: #eee;
   --indent: 30px;
   --items: 4;
+
+  --anim-fast: 300ms ease-out;
+  --anim-slow: 1s ease-in-out;
+
 }
 
 body {
@@ -31,8 +35,23 @@ body {
   text-decoration: none;
 }
 
-.link-current {
-  color: var(--accent-color);
+.link-current::after {
+  content: '';
+  position: relative;
+  top: 28px;
+
+  /* transform: translateX(50%), scaleX(0.3); */
+
+  display: block;
+  width: 100%;
+  height: 4px;
+
+
+  border-radius: 2px;
+
+  background-color: var(--accent-color);
+  /* opacity: 0; */
+  /* transition: transform var(--anim-fast), opacity var(--anim-fast); */
 }
 
 /* reset starts */
@@ -63,6 +82,8 @@ img {
   border-radius: 4px;
   background: var(--accent-color);
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+
+  /* transition-property: color, background; */
 }
 
 .btn:hover,
@@ -132,7 +153,9 @@ img {
   line-height: normal;
   letter-spacing: 0.28px;
   color: var(--main-title-color);
+  transition: color var(--anim-fast);
 }
+
 
 .header-link {
   display: flex;
@@ -141,6 +164,12 @@ img {
   align-items: center;
   color: var(--typography-color);
 }
+
+/* .nav-link:hover::after,
+.nav-link:focus::after {
+  transform: translateX(50%), scaleX(1);
+  opacity: 1;
+} */
 
 .header-link:hover,
 .header-link:focus,
@@ -290,6 +319,32 @@ img {
   gap: 30px;
 }
 
+.about-item {
+  position: relative;
+}
+.overlay {
+position: absolute;
+width: 100%;
+bottom: 0;
+padding-top: 20px;
+padding-bottom: 20px;
+background-color: rgba(47, 48, 58, 0.8);
+}
+
+.overlay-text {
+  color: var(--main-color);
+  text-align: center;
+  text-transform: uppercase;
+  font-family: Roboto;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.42px;
+  
+}
+
+
 /* Team */
 .team-section {
   background: #f5f4fa;
@@ -346,6 +401,7 @@ img {
   border-radius: 50%;
   background-color: var(--main-color);
   color: rgba(175, 177, 184, 1);
+  transition: color var(--anim-slow), background-color var(--anim-slow);
 }
 
 .socials-icon {
@@ -380,6 +436,7 @@ img {
   background-color: #ffffff;
   border: rgba(175, 177, 184, 1) 1px solid;
   cursor: pointer;
+  transition: color var(--anim-fast), border var(--anim-fast);
 }
 
 .clients-item:hover,
